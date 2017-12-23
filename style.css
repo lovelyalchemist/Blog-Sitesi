@@ -6,28 +6,11 @@ Box Sizing
   box-sizing: inherit;
 }
 
-/*********************
-Media Queries
-*********************/
 
-@mixin bp($point) {
-  @if $point == full {
-    @media (min-width: 960px) { @content; }
-  }
-  @else if $point == medium {
-    @media (min-width: 768px)  { @content; }
-  }
-  @else if $point == small {
-    @media (min-width: 500px)  { @content; }
-  }
-}
 
 html,
 body {
-  box-sizing: border-box;
-}
-
-body {
+ box-sizing: border-box;
     font-family: 'Hind', sans-serif;
     line-height: 1.88889;
     color: black; 
@@ -125,7 +108,7 @@ abbr {
 	color: black;
 	font-size: 32px;
     order: 0;
-    flex: 0 1 320px;
+    flex: 0 1 340px;
     @include bp (small) {
     flex: 0 1 320px;  
     flex-direction:row;
@@ -140,10 +123,9 @@ abbr {
 	margin-top: 65%;
 }
 .content {
-    width: 100%;
+    width: 80%;
     flex: 0 1 100%;
-    min-height: 120vh;
-    padding:16px;
+    min-height: 100vh;
     flex-direction: column;
     background-image: url(images/dragon-1.jpg);
 	background-repeat: no-repeat;
@@ -153,28 +135,7 @@ abbr {
 	align-items: center;
 }
 
-.about {
-	width: 80%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	flex-direction: column;
-	background-image: url(images/dragon-2.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
 
-.about p {
-	width: 560px;
-}
-
-.text-body {
-	width: 560px;
-	overflow: hidden;
-	margin-left: 32px;
-}
 .textanimation {
 	width: 100%;
 	position: center;
@@ -210,9 +171,46 @@ abbr {
  	margin-top: -56px;
  	margin-bottom: -48px;
 }
+.about {
+	 width: 100%;
+    flex: 0 1 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url(images/dragon-2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about p {
+	width: 560px;
+	display: flex; 
+	align-self: center;
+}
+.boxabout {
+	display: flex; 
+	width: 640px;
+	height: 480px;
+	border: 2px solid #64b5f6;
+	border-radius: 8px;
+	justify-content: center;
+	align-self: flex-start;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin-left: 32px;
+	background-color: rgba(129,212,250, 0.5);
+}
+.text-body {
+	width: 560px;
+	overflow: hidden;
+	margin-left: 32px;
+}
 .articles {
 	width: 80%;
-	height: 100%;
+    flex: 0 1 100%;
+    min-height: 100vh;
 	background-image: url(images/dragon-3.jpg);
 	background-size: cover;
 	background-position: center;
@@ -249,6 +247,29 @@ abbr {
 	background-color: rgba(129,212,250, 0.5);
 }
 
+.boxpost {
+	width: 80%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap; wrap;
+	flex-direction: column;
+
+}
+.boxpost p{
+	width: 900px;
+}
+.boxpost h1 {
+	width: 400px;
+	font-size: 24px;
+}
+
+.share {
+	width: 72px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
 @media (max-width: 667px) {
 	.container {
 	  display: -ms-flexbox;
@@ -273,21 +294,51 @@ abbr {
 		background-repeat: no-repeat;
 		color: black;
 		font-size: 22px;
-		height: 320px;
+		height: 400px;
 	}
 
 	.sidebar li {
 		border-bottom: 1px solid black;
 		width: 90px;
-		margin-top: 16px;
+		margin-top: 8px;
 	}
 	.sidebar ul {
 		list-style-type: none;
-
-		margin-top: 70%;
+		margin-top: 50%;
 	}
+    .about {
+        width: 100%;
+        flex: 0 1 100%;
+        min-height: 100vh;
+}
+
+    .about p {
+        width: 264px;
+        display: flex; 
+        align-self: center;
+    }
+    .boxabout {
+        display: flex; 
+        width: 320px;
+        border: 2px solid #64b5f6;
+        border-radius: 8px;
+        justify-content: center;
+        align-self: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: 8px;
+        background-color: rgba(129,212,250, 0.5);
+    }
+    .text-body {
+        width: 304px;
+        overflow: hidden;
+        margin-left: 32px;
+    }
 	.articles {
-		width: 440px;
+		width: 100%;
+   		flex: 0 1 100%;
+    	min-height: 100vh;
+		width: 400px;
 		background-image: url(images/dragon-3.jpg);
 		background-size: cover;
 		background-position: 100% 100%;
@@ -328,9 +379,11 @@ abbr {
 		width: 264px;
 	}
 	.content {
-		width: 320px;
+        width: 100%;
+   		flex: 0 1 100%;
+    	min-height: 100vh;
 		display: flex;
-		justify-content: center;
+        justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
 		flex-direction: column;
@@ -340,15 +393,14 @@ abbr {
 		z-index: 4;
 	}
 	.boxpost {
-		width: 336px;
+		width: 264px;
 		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
 		flex-wrap; wrap;
 		flex-direction: column;
 	}
 	.boxpost p{
-		width: 280px;
+		width: 264px;
+        font-size: 16px;
 	}
 	.boxpost h1 {
 		width: 280px;
@@ -372,44 +424,7 @@ abbr {
 		font-weight: 80;
 		line-height: 50px;
 	 	margin-left: 16px;
-	 	margin-top: -56px;
+	 	margin-top: -64px;
 	 	margin-bottom: -48px;
 	}
-}
-
-.boxabout {
-	display: flex; 
-	width: 640px;
-	height: 480px;
-	border: 2px solid #64b5f6;
-	border-radius: 8px;
-	justify-content: center;
-	align-self: flex-start;
-	flex-wrap: wrap;
-	flex-direction: column;
-	margin-left: 32px;
-	background-color: rgba(129,212,250, 0.5);
-}
-.boxpost {
-	width: 75%;
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-start;
-	flex-wrap; wrap;
-	flex-direction: column;
-
-}
-.boxpost p{
-	width: 900px;
-}
-.boxpost h1 {
-	width: 400px;
-	font-size: 24px;
-}
-
-.share {
-	width: 72px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
 }
